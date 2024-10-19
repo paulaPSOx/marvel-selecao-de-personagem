@@ -1,0 +1,417 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e4dce;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff0021;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6001d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    scrollbar-width: thin;
+    scrollbar-color: #ec6a1f #000000;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'ssf4', Courier, monospace;
+    background: #000000;
+    
+}
+
+body::before {
+    content: "";
+    background-image: url("../imagens/intro-marvel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.30;
+    z-index: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    margin-top: -70px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.cabecalho .titulo {
+    color: #ec6a1f;
+    text-transform: uppercase;
+    font-size: 35px;
+    -webkit-text-stroke: 1px #860202;
+    margin-top: 100px;
+}
+
+.selecao-de-personagens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.selecao-de-personagens .personagem-grande {
+    text-align: center;
+    width: 25%;
+    height: 55vh;
+    position: relative;
+}
+
+.selecao-de-personagens .personagem-grande img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: auto;
+}
+
+.selecao-de-personagens .personagem-grande .nome h2 {
+    color: #fff;
+    font-family: 'command', sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2.5vw;
+}
+
+.selecao-de-personagens .lista-de-personagens {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem {
+    border: 2px solid #fff;
+    background-color: #fff;
+    width: 28%;
+    height: 120px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado {
+    border: 2px solid #d3ffff;
+    animation: c-glowing-blue 0.3s ease-in-out infinite alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem:hover {
+    animation: c-glowing-blue 0.3s ease-in-out infinite alternate;
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem .tag {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #d3ffff;
+    animation: text-glowing-blue 0.3s ease-in-out infinite alternate;
+}
+
+.selecao-de-personagens .lista-de-personagens .personagem.selecionado .tag {
+    display: block;
+}
+
+.jogador-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.jogador-blue {
+    color: #0e87f1;
+    border-color: #0e87f1;
+}
+
+.jogador-red {
+    color: #ff0021;
+    border-color: #ff0021;
+}
+
+.indisponivel {
+    opacity: 0.5;
+}
+
+.c-glowing-blue {
+    box-shadow: 0 0 10px #0e87f1, 0 0 20px #0e87f1, 0 0 30px #0e87f1;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.c-glowing-red {
+    box-shadow: 0 0 10px #e6001d, 0 0 20px #e6001d, 0 0 30px #e6001d;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.hover-yellow {
+    border: 3px solid #fffb00;
+    box-shadow: 0 0 15px #fff; 
+    animation: pulse 1s;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px #fffb00;
+    }
+    50% {
+        box-shadow: 0 0 20px #fffb00;
+    }
+    100% {
+        box-shadow: 0 0 10px #fffb00;
+    }
+}
+
+.botoes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 12px; 
+}
+
+.confirmar-escolha,
+.alterar-escolha {
+    padding: 8px 8px;
+    background: linear-gradient(45deg, #000000, #860202, #000000);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2vw;
+}
+
+.confirmar-escolha:hover,
+.alterar-escolha:hover {
+    box-shadow: 0 0 20px #860202, 0 0 10px #860202;
+}
+
+.confirmar-escolha:focus,
+.alterar-escolha:focus {
+    box-shadow: 0 0 20px rgba(255, 0, 33, 0.5);
+}
+
+.confirmar-escolha:disabled,
+.alterar-escolha:disabled {
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #d7dce4;
+    margin-top: 30px;
+    padding: 1;
+}
+
+footer a.github-link {
+    color: #ec6a1f;
+    transition: color 0.3s ease;
+}
+
+footer a.github-link:hover {
+    color: #860202;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    body::before {
+        background-image: url("../imagens/intro-marvel.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.30;
+        
+    }
+    .cabecalho .titulo {
+        font-size: 30px;
+    }
+
+    .jogador-label {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 985px) {
+    body::before {
+        background-image: url("../imagens/fundo-marvel2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+    }
+
+    .jogador-label {
+        font-size: 13px;
+    }
+
+    .cabecalho {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho .titulo {
+        font-size: 30px;
+    }
+
+    .selecao-de-personagens .lista-de-personagens {
+        max-width: 285px;
+        margin-top: 20px;
+    }
+    
+    .selecao-de-personagens .lista-de-personagens .personagem {
+        width: 85px;
+        height: 85px;
+    }
+
+    .selecao-de-personagens .personagem-grande {
+        width: 22%;
+        height: 50vh;
+    }
+
+    .botoes-container {
+        flex-direction: column;
+        gap: 10px; 
+        margin-top: 15px;
+    }
+
+    .confirmar-escolha,
+    .alterar-escolha {
+        width: 60%;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+}
+
+@media (max-width: 585px) {
+    .jogador-label {
+        font-size: 12px;
+    }
+
+    .cabecalho {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho .titulo {
+        font-size: 25px;
+    }
+
+    .selecao-de-personagens .lista-de-personagens {
+        max-width: 285px;
+        margin-top: 20px;
+    }
+    
+    .selecao-de-personagens .lista-de-personagens .personagem {
+        width: 75px;
+        height: 75px;
+    }
+
+    .selecao-de-personagens .personagem-grande {
+        width: 20%;
+        height: 45vh;
+    }
+
+    .botoes-container {
+        flex-direction: column;
+        gap: 12px; 
+    }
+
+    .confirmar-escolha,
+    .alterar-escolha {
+        width: 75%;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+@media(max-width: 485px) {
+    .jogador-label {
+        font-size: 10px;
+    }
+
+    .cabecalho {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho .titulo {
+        font-size: 22px;
+    }
+
+    .selecao-de-personagens .lista-de-personagens {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+    
+    .selecao-de-personagens .lista-de-personagens .personagem {
+        width: 60px;
+        height: 60px;
+    }
+
+    .selecao-de-personagens .personagem-grande {
+        width: 15%;
+        height: 35vh;
+        margin-top: 20px;
+    }
+
+    .botoes-container {
+        flex-direction: column;
+        gap: 12px; 
+    }
+
+    .confirmar-escolha,
+    .alterar-escolha {
+        width: 75%;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
