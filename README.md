@@ -1,153 +1,245 @@
-# Marvel - Seleção de Personagens 🎬🦸‍♀💥
+<div align="center">
 
-Este projeto é uma recriação do incrível **Universo Cinemático Marvel (MCU)**, inspirado nos filmes e personagens icônicos. Desenvolvido com **HTML**, **CSS** e **JavaScript**, ele traz à vida algumas das cenas e elementos visuais do universo Marvel, proporcionando uma experiência envolvente para os fãs. Este projeto faz parte do desafio da comunidade **[@Dev Em Dobro](https://github.com/devemdobro)** e da **Guild Dev Em Dobro**, na semana da **Mapa Dev Week**.
+<img src="img-marvel/marvel-selecao.png" alt="Tela de seleção de personagens com Homem de Ferro escolhido pelo Jogador 1 e Hulk pelo Jogador 2" width="100%">
 
----
+<br><br>
 
-## Índice
+# 🦸 MARVEL — SELEÇÃO DE PERSONAGENS
 
-- [Objetivo do Projeto](#objetivo-do-projeto-)
-- [Tecnologias Utilizadas 🛠️](#tecnologias-utilizadas-)
-- [Estrutura do Projeto 📂](#estrutura-do-projeto-)
-- [Descrição dos Arquivos 📄](#descrição-dos-arquivos-)
-- [Funcionalidades 🌟](#funcionalidades-)
-- [Capturas de Tela 🎨](#capturas-de-tela-)
-- [Como Usar 🚀](#como-usar-)
-- [Links Úteis 🌐](#links-úteis-)
-- [Testes 🔍](#testes-)
-- [Contribuição 🤝](#contribuição-)
-- [Licença 📜](#licença-)
-- [Agradecimentos 🙏](#agradecimentos-)
-- [Melhorias Futuras 🚧](#melhorias-futuras-)
+**Uma tela de seleção para dois jogadores, no estilo dos jogos de luta, com 9 heróis e vilões da Marvel.**<br>
+HTML5 · CSS3 · JavaScript puro — sem frameworks, sem bibliotecas e sem etapa de build.
 
----
+<p>
+  <img src="https://img.shields.io/badge/PROJETO-FRONT--END-ED1D24?style=for-the-badge" alt="Projeto front-end">
+  <img src="https://img.shields.io/badge/STATUS-CONCLUÍDO-16A34A?style=for-the-badge" alt="Status: concluído">
+  <img src="https://img.shields.io/badge/LICENÇA-MIT-0E87F1?style=for-the-badge" alt="Licença MIT">
+</p>
 
-## Objetivo do Projeto
+<p>
+  <a href="https://paulapsox.github.io/marvel-selecao-de-personagem/index.html">
+    <img src="https://img.shields.io/badge/▶_ESCOLHER_AGORA-ED1D24?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Acessar o projeto online">
+  </a>
+  <a href="https://github.com/paulaPSOx/marvel-selecao-de-personagem">
+    <img src="https://img.shields.io/badge/VER_CÓDIGO-202020?style=for-the-badge&logo=github&logoColor=white" alt="Ver código no GitHub">
+  </a>
+</p>
 
-Reviver a magia do universo Marvel, apresentando suas características icônicas de forma interativa e visualmente atraente.
-
----
-
-## Tecnologias Utilizadas 🛠️
-
-- **HTML**: Estrutura o conteúdo do projeto.
-- **CSS**: Responsável pela estilização e apresentação visual.
-- **JavaScript**: Adiciona interatividade e funcionalidades dinâmicas.
+</div>
 
 ---
 
-## Estrutura do Projeto 📂
+## ⚡ Em 30 segundos
 
-```
-├── src
-│   ├── css
-│   │   ├── reset.css
-│   │   ├── style.css
-│   │   └── animacoes.css
-│   ├── imagens
-│   │   ├── thor.png
-│   │   ├── homem-de-ferro.jpg
-│   │   ├── viuva-negra.jpg
-│   │   ├── hulk.jpg
-│   │   ├── capitao-america.jpg
-│   │   ├── ultron.jpg
-│   │   ├── doutor-doom.jpg
-│   │   ├── nova.jpg
-│   │   └── fenix.jpg
-│   └── js
-│       └── script.js
-├── index.html
+| | |
+| :-- | :-- |
+| **O que é** | Uma página de seleção em que dois jogadores escolhem seus personagens, com visual inspirado em jogos de luta. |
+| **Para quê** | Praticar manipulação do DOM, eventos, controle de estado e responsividade em um projeto completo e publicado. |
+| **Destaque** | Lógica de dois jogadores com regras de escolha, confirmação e troca, sem repetir código para cada jogador. |
+| **Stack** | HTML5, CSS3 (Flexbox, transições, animações e media queries), JavaScript (ES6+). |
+| **Online** | [paulapsox.github.io/marvel-selecao-de-personagem](https://paulapsox.github.io/marvel-selecao-de-personagem/index.html) |
+
+---
+
+## 🎮 Veja em ação
+
+> 💡 **Dica para quem for testar:** passe o mouse sobre os cards para ver o personagem aparecer ao lado, escolha dois heróis e confirme a escolha de cada jogador.
+
+<table>
+  <tr>
+    <td width="68%" valign="top">
+      <img src="img-marvel/marvel-selecao.png" alt="Versão para computador: Jogador 1 com Homem de Ferro e Jogador 2 com Hulk" width="100%">
+      <p align="center"><strong>💻 Computador</strong><br>Cards no centro e os personagens escolhidos nas laterais.</p>
+    </td>
+    <td width="32%" valign="top">
+      <img src="img-marvel/marvel-mobile.png" alt="Versão para celular da tela de seleção" width="100%">
+      <p align="center"><strong>📱 Celular</strong><br>Layout adaptado para telas pequenas.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## ⭐ Power-ups (funcionalidades)
+
+### 🧑‍🤝‍🧑 Seleção para dois jogadores
+- 9 personagens: Thor, Homem de Ferro, Viúva Negra, Hulk, Capitão América, Ultron, Doutor Doom, Nova e Fênix.
+- A página abre com dois personagens sorteados, sempre diferentes entre si.
+- Enquanto o jogador ainda não escolheu, passar o mouse em um card mostra o personagem grande ao lado, com o nome.
+- O primeiro clique define o **Jogador 1** (brilho azul) e o segundo, o **Jogador 2** (brilho vermelho).
+- O Jogador 2 não pode escolher o personagem que o Jogador 1 já escolheu.
+- Quando os dois escolhem, os outros 7 cards ficam esmaecidos.
+
+### ✅ Confirmar ou trocar
+- Os botões só ficam ativos depois que o jogador escolhe um personagem.
+- **Confirmar** trava a escolha com destaque amarelo e desativa os botões daquele jogador.
+- **Alterar escolha** libera o jogador para escolher outro personagem.
+
+### 🎨 Visual
+- Duas fontes personalizadas carregadas com `@font-face`.
+- Fundo com imagem em transparência e troca de fundo em telas menores.
+- Cards que crescem levemente ao passar o mouse.
+
+---
+
+## 🔧 Por dentro do código
+
+Algumas decisões que tomei durante o desenvolvimento:
+
+| Tema | Como foi resolvido |
+| :-- | :-- |
+| **Dados no HTML** | Cada card é um `<li>` com `id` e `data-name`. O `id` monta o caminho da imagem grande (`./src/imagens/${id}.png`) e o `data-name` guarda o nome de exibição, com acento (ex.: "Viúva Negra"). |
+| **Sorteio inicial** | `randomizarPersonagens()` sorteia dois índices com `Math.random()` e repete o segundo sorteio até ele ser diferente do primeiro. |
+| **Código reutilizável** | `aplicarHover`, `confirmarJogador` e `alterarJogador` recebem como parâmetros a imagem, o nome, os botões e a classe de cor de cada jogador. Assim, as mesmas funções atendem os dois jogadores. |
+| **Estado visual por classes** | O JavaScript só adiciona e remove classes com `classList` (`c-glowing-blue`, `c-glowing-red`, `indisponivel`, `hover-yellow`). Toda a aparência fica no CSS. |
+| **Botões** | O atributo `disabled` impede ações fora de hora, como confirmar antes de escolher. |
+| **Responsividade** | Media queries em 1200, 985, 585 e 485 px adaptam o layout. Flexbox organiza a tela e uma imagem de fundo diferente entra nas telas menores. |
+
+### 🎯 Destaque: o estado da seleção
+
+| Variável | Papel na tela |
+| :-- | :-- |
+| `jogador1Selecionado` | Indica se o Jogador 1 já escolheu. Define quem recebe o próximo clique. |
+| `jogador2Selecionado` | Indica se o Jogador 2 já escolheu. |
+| `jogador1Personagem` | Guarda o card escolhido (ou sorteado) do Jogador 1. |
+| `jogador2Personagem` | Guarda o card escolhido (ou sorteado) do Jogador 2. |
+
+Quem recebe o clique depende dessas variáveis: se o Jogador 1 ainda não escolheu, o clique é dele. Depois, o próximo clique vai para o Jogador 2.
+
+---
+
+## 🧱 Blocos de construção (tecnologias)
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48" alt="HTML5"><br>
+      <strong>HTML5</strong><br>
+      <sub>Estrutura semântica da página.</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="48" alt="CSS3"><br>
+      <strong>CSS3</strong><br>
+      <sub>Layout, efeitos e responsividade.</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" alt="JavaScript"><br>
+      <strong>JavaScript</strong><br>
+      <sub>Lógica dos jogadores, DOM e eventos.</sub>
+    </td>
+  </tr>
+</table>
+
+**Complementos:** fontes personalizadas locais (`@font-face`) · [GitHub Pages](https://pages.github.com/) (hospedagem). Não há bibliotecas externas.
+
+---
+
+## 🗂️ Estrutura do projeto
+
+```text
+marvel-selecao-de-personagem/
+├── index.html            # Página única
+├── img-marvel/           # Prints e imagens de referência (usadas neste README)
+├── src/
+│   ├── css/              # style.css e fontes.css
+│   ├── fontes/           # fontes personalizadas
+│   ├── imagens/          # cards (.jpg), personagens grandes (.png) e fundos
+│   └── js/               # script.js
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## Descrição dos Arquivos 📄
+## 🚀 Como rodar
 
-- **style.css**: Estilos específicos para a página inicial.
-- **fonts.css**: Estilos para a página dos personagens.
-- **script.js**: JavaScript para a interatividade da página inicial.
-- **images/**: Pasta com imagens de personagens e cenas.
+Não há dependências nem etapa de build. Escolha uma das opções:
 
----
+**Opção 1 — Acessar online:** [abrir no GitHub Pages](https://paulapsox.github.io/marvel-selecao-de-personagem/index.html).
 
-## Funcionalidades 🌟
+**Opção 2 — Baixar o ZIP:** clique em **Code → Download ZIP** neste repositório, extraia e abra o `index.html` no navegador.
 
-- **Seleção de Personagens:** Os jogadores podem visualizar e selecionar personagens icônicos da Marvel, como Thor, Homem de Ferro, Hulk, e muitos outros.
-- **Interface Responsiva:** A aplicação é otimizada para diferentes tamanhos de tela, garantindo uma ótima experiência em dispositivos móveis e desktops.
-- **Animações e Estilos:** Utilização de animações CSS para destacar a seleção de personagens e melhorar a interação do usuário.
-- **Confirmação de Escolhas:** Os jogadores podem confirmar ou alterar suas escolhas antes de prosseguir.
+**Opção 3 — Clonar com Git:**
 
----
+```bash
+git clone https://github.com/paulaPSOx/marvel-selecao-de-personagem.git
+cd marvel-selecao-de-personagem
+```
 
-## Capturas de Tela 🎨
+Depois, abra o `index.html` no navegador. Se usar o VS Code, a extensão **Live Server** também funciona.
 
-Abaixo estão capturas de tela que mostram o visual vibrante e dinâmico inspirado no universo Marvel:
-
-![Inspiração Marvel](marvel-img-inspiracao(0).png)
-
-![Inspiração Marvel](marvel-img-inpiracao(1).png)
+> Mantenha a pasta `src/` no lugar original para as imagens e as fontes carregarem.
 
 ---
 
-## Como Usar 🚀
+## 📚 O que este projeto me ensinou
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seunome/marvel-selecao-de-personagem.git
-   ```
-2. Navegue até a pasta do projeto:
-   ```bash
-   cd marvel-selecao-de-personagem
-   ```
-3. Abra o arquivo `index.html` em um navegador para visualizar o projeto.
+- Estruturar uma página com HTML semântico e atributos `data-*`.
+- Manipular o DOM e reagir a eventos de `mouseover`, `mouseout` e `click`.
+- Controlar o estado da interface com variáveis e classes CSS.
+- Escrever funções reutilizáveis com parâmetros, em vez de repetir código para cada jogador.
+- Usar fontes personalizadas com `@font-face`.
+- Criar layouts com Flexbox e adaptá-los com media queries.
+- Publicar um projeto com GitHub Pages.
 
 ---
 
-## Links Úteis 🌐
+## 🏁 Próximas fases
 
-- Visualizar o projeto: [Marvel Seleção de Personagem](https://paulaPSOx.github.io/marvel-selecao-de-personagem/index.html)
-- Repositório no GitHub: [paulaPSOx/marvel-selecao-de-personagem](https://github.com/paulaPSOx/marvel-selecao-de-personagem)
+Melhorias que quero fazer, e que **ainda não estão implementadas**:
 
----
-
-## Testes 🔍
-
-Para testar o projeto:
-1. Certifique-se de que todos os arquivos estão carregados corretamente.
-2. Navegue pelas páginas e interaja com as funcionalidades.
-3. Verifique a responsividade em diferentes dispositivos.
+- [ ] Impedir que o Jogador 1 escolha o personagem do Jogador 2 depois de usar "Alterar escolha".
+- [ ] Atualizar o texto alternativo (`alt`) das imagens dos jogadores quando o personagem muda.
+- [ ] Acessibilidade: permitir escolher personagens pelo teclado e mostrar foco visível nos cards.
+- [ ] Refatorar `alterarJogador`, que hoje muda uma cópia local do personagem em vez do estado da tela.
+- [ ] Criar uma próxima etapa depois que os dois jogadores confirmam, com opção de reiniciar a seleção.
+- [ ] Otimizar o tamanho das imagens para a página carregar mais rápido.
+- [ ] Adicionar mais personagens.
 
 ---
 
-## Contribuição 🤝
+## 🎨 Inspiração e créditos
 
-Contribuições são bem-vindas! Se você deseja contribuir:
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature (`git checkout -b feature/nome-da-sua-feature`).
-3. Faça suas alterações e commit (`git commit -m 'Adicionando nova funcionalidade'`).
-4. Envie um pull request.
+O ponto de partida foi um layout de referência do desafio, no estilo das telas de seleção de jogos de luta:
 
----
+<table>
+  <tr>
+    <td width="50%">
+      <img src="img-marvel/marvel-inspiracao-1.png" alt="Layout de referência do desafio, com a tela de seleção de personagens e a estrutura destacada em cores" width="100%">
+    </td>
+    <td width="50%">
+      <img src="img-marvel/marvel-inspiracao-2.png" alt="Segunda referência do desafio, com Thor e Ultron selecionados" width="100%">
+    </td>
+  </tr>
+</table>
 
-## Licença 📜
-
-Este projeto é licenciado sob a MIT License - veja o arquivo [LICENSE](https://github.com/paulaPSOx/marvel-selecao-de-personagem/LICENSE) para mais detalhes.
-
----
-
-## Agradecimentos 🙏
-
-Agradeço à comunidade **[@Dev Em Dobro](https://github.com/devemdobro)** e à **Guild Dev Em Dobro** pelo apoio e recursos durante o desenvolvimento deste projeto na **Mapa Dev Week**!
+Projeto desenvolvido na **Mapa Dev Week**, a partir de desafios práticos das comunidades [**Dev Em Dobro**](https://github.com/devemdobro) e **Guild Dev Em Dobro**. Obrigada pelo conteúdo e pela oportunidade de praticar.
 
 ---
 
-## Melhorias Futuras 🚧
+## 📄 Licença e aviso
 
-- Adicionar mais personagens ao projeto.
-- Implementar animações durante a interação do usuário.
-- Melhorar a acessibilidade do site.
+Código disponibilizado sob a licença **MIT**. Veja o arquivo [`LICENSE`](LICENSE).
+
+Projeto independente, feito para estudo e portfólio. Não possui vínculo, patrocínio ou aprovação da Marvel, da Disney ou de qualquer outra detentora de direitos. Personagens, nomes e imagens pertencem aos seus respectivos titulares. As fontes utilizadas têm licenças próprias de seus autores.
 
 ---
 
-Espero que você goste do projeto e se divirta explorando o mundo do Universo Cinemático Marvel! 🌌✨🤖
+<div align="center">
+
+## 👩‍💻 Feito por Paula Oliveira
+
+Desenvolvedora full stack em formação, com foco atual em front-end.<br>
+Este projeto marca uma etapa da minha evolução: da prática dos fundamentos à construção de algo completo, interativo e no ar.
+
+<p>
+  <a href="https://github.com/paulaPSOx">
+    <img src="https://img.shields.io/badge/GitHub-paulaPSOx-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub de Paula Oliveira">
+  </a>
+  <a href="https://www.linkedin.com/in/oliveiraspaula/">
+    <img src="https://img.shields.io/badge/LinkedIn-Paula_Oliveira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn de Paula Oliveira">
+  </a>
+</p>
+
+**Gostou? Deixe uma ⭐ no repositório. É o meu power-up favorito.** 🦸
+
+</div>
