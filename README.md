@@ -66,7 +66,7 @@ HTML5 · CSS3 · JavaScript puro — sem frameworks, sem bibliotecas e sem etapa
 - A página abre com dois personagens sorteados, sempre diferentes entre si.
 - Enquanto o jogador ainda não escolheu, passar o mouse em um card mostra o personagem grande ao lado, com o nome.
 - O primeiro clique define o **Jogador 1** (brilho azul) e o segundo, o **Jogador 2** (brilho vermelho).
-- O Jogador 2 não pode escolher o personagem que o Jogador 1 já escolheu.
+- Um jogador não pode escolher o personagem que o outro já escolheu.
 - Quando os dois escolhem, os outros 7 cards ficam esmaecidos.
 
 ### ✅ Confirmar ou trocar
@@ -77,7 +77,12 @@ HTML5 · CSS3 · JavaScript puro — sem frameworks, sem bibliotecas e sem etapa
 ### 🎨 Visual
 - Duas fontes personalizadas carregadas com `@font-face`.
 - Fundo com imagem em transparência e troca de fundo em telas menores.
-- Cards que crescem levemente ao passar o mouse.
+- Cards que crescem levemente e ganham brilho animado ao passar o mouse.
+
+### ♿ Acessibilidade
+- Os cards podem ser escolhidos pelo teclado: **Tab** para navegar e **Enter** ou **Espaço** para escolher.
+- Contorno amarelo visível no card ou botão em foco.
+- O texto alternativo (`alt`) das imagens dos jogadores acompanha o personagem escolhido.
 
 ---
 
@@ -91,6 +96,8 @@ Algumas decisões que tomei durante o desenvolvimento:
 | **Sorteio inicial** | `randomizarPersonagens()` sorteia dois índices com `Math.random()` e repete o segundo sorteio até ele ser diferente do primeiro. |
 | **Código reutilizável** | `aplicarHover`, `confirmarJogador` e `alterarJogador` recebem como parâmetros a imagem, o nome, os botões e a classe de cor de cada jogador. Assim, as mesmas funções atendem os dois jogadores. |
 | **Estado visual por classes** | O JavaScript só adiciona e remove classes com `classList` (`c-glowing-blue`, `c-glowing-red`, `indisponivel`, `hover-yellow`). Toda a aparência fica no CSS. |
+| **Atualização da tela** | A função `atualizarJogador` troca imagem, texto alternativo e nome do personagem em um só lugar, usada na seleção, no hover e no sorteio inicial. |
+| **Teclado** | Os cards têm `tabindex="0"` e `role="button"`. Um evento `keydown` aciona o mesmo clique quando o jogador aperta Enter ou Espaço, sem duplicar a lógica. |
 | **Botões** | O atributo `disabled` impede ações fora de hora, como confirmar antes de escolher. |
 | **Responsividade** | Media queries em 1200, 985, 585 e 485 px adaptam o layout. Flexbox organiza a tela e uma imagem de fundo diferente entra nas telas menores. |
 
@@ -140,7 +147,7 @@ marvel-selecao-de-personagem/
 ├── index.html            # Página única
 ├── img-marvel/           # Prints e imagens de referência (usadas neste README)
 ├── src/
-│   ├── css/              # style.css e fontes.css
+│   ├── css/              # style.css, animacoes.css e fontes.css
 │   ├── fontes/           # fontes personalizadas
 │   ├── imagens/          # cards (.jpg), personagens grandes (.png) e fundos
 │   └── js/               # script.js
@@ -177,6 +184,7 @@ Depois, abra o `index.html` no navegador. Se usar o VS Code, a extensão **Live 
 - Manipular o DOM e reagir a eventos de `mouseover`, `mouseout` e `click`.
 - Controlar o estado da interface com variáveis e classes CSS.
 - Escrever funções reutilizáveis com parâmetros, em vez de repetir código para cada jogador.
+- Aplicar acessibilidade básica: navegação por teclado, foco visível e texto alternativo dinâmico.
 - Usar fontes personalizadas com `@font-face`.
 - Criar layouts com Flexbox e adaptá-los com media queries.
 - Publicar um projeto com GitHub Pages.
@@ -187,10 +195,7 @@ Depois, abra o `index.html` no navegador. Se usar o VS Code, a extensão **Live 
 
 Melhorias que quero fazer, e que **ainda não estão implementadas**:
 
-- [ ] Impedir que o Jogador 1 escolha o personagem do Jogador 2 depois de usar "Alterar escolha".
-- [ ] Atualizar o texto alternativo (`alt`) das imagens dos jogadores quando o personagem muda.
-- [ ] Acessibilidade: permitir escolher personagens pelo teclado e mostrar foco visível nos cards.
-- [ ] Refatorar `alterarJogador`, que hoje muda uma cópia local do personagem em vez do estado da tela.
+- [ ] Limpar a imagem do painel do jogador quando ele usa "Alterar escolha" (hoje só o nome é apagado).
 - [ ] Criar uma próxima etapa depois que os dois jogadores confirmam, com opção de reiniciar a seleção.
 - [ ] Otimizar o tamanho das imagens para a página carregar mais rápido.
 - [ ] Adicionar mais personagens.

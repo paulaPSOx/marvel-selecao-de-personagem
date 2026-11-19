@@ -1,0 +1,40 @@
+/* Animações e estados de destaque dos cards */
+
+@keyframes c-glowing-blue {
+    from {
+        box-shadow: 0 0 6px #0e87f1, 0 0 12px #0e87f1;
+    }
+    to {
+        box-shadow: 0 0 14px #0e87f1, 0 0 28px #0e87f1, 0 0 40px #0e87f1;
+    }
+}
+
+@keyframes text-glowing-blue {
+    from {
+        text-shadow: 0 0 4px #0e87f1;
+    }
+    to {
+        text-shadow: 0 0 10px #0e87f1, 0 0 20px #0e87f1;
+    }
+}
+
+/* Pré-visualização ao passar o mouse (azul = Jogador 1, vermelho = Jogador 2) */
+.personagem.hover-azul {
+    border-color: #0e87f1;
+}
+
+.personagem.hover-vermelho {
+    border-color: #ff0021;
+}
+
+/* Foco visível para quem navega pelo teclado */
+.personagem:focus-visible {
+    outline: 3px solid #fffb00;
+    outline-offset: 3px;
+}
+
+.confirmar-escolha:focus-visible,
+.alterar-escolha:focus-visible {
+    outline: 3px solid #fffb00;
+    outline-offset: 2px;
+}
